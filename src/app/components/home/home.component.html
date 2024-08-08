@@ -1,0 +1,23 @@
+<div *ngIf="displayedNews.length > 0" class="news-container">
+    <!-- Cards -->
+    <mat-card *ngFor="let item of displayedNews" class="news-card">
+      <mat-card-header>
+        <mat-card-title>
+          <a [href]="item.url" target="_blank" class="news-title">{{ item.title }}</a>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="news-info">By: {{ item.by }} | Score: {{ item.score }} | Comments: {{ item.descendants }}</p>
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Spinner di caricamento -->
+    <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+  
+    <!-- Bottoni -->
+    <div class="button-group">
+      <button mat-raised-button color="primary" (click)="showLess()" [disabled]="currentIndex === 0">Show Less</button>
+      <button mat-raised-button color="primary" (click)="showMore()" [disabled]="currentIndex + pageSize >= newsID.length">Show More</button>
+    </div>
+  </div>
+  
