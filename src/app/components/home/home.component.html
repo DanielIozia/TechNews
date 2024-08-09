@@ -1,3 +1,5 @@
+<mat-spinner *ngIf="loading" class="spinner bigger"></mat-spinner>
+
 <div *ngIf="displayedNews.length > 0" class="news-container">
     <!-- Cards -->
     <mat-card *ngFor="let item of displayedNews" class="news-card">
@@ -12,7 +14,7 @@
     </mat-card>
   
     <!-- Spinner di caricamento -->
-    <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+    <mat-spinner *ngIf="showMoreLoading" class="spinner"></mat-spinner>
   
     <!-- Bottoni -->
     <div class="button-group">

@@ -37,12 +37,6 @@
     }
   }
   
-  .spinner {
-    margin: 20px 0;
-    width: 30px !important;
-    height: 30px !important;
-  }
-  
   /* Media Queries */
   @media (max-width: 600px) {
     .news-title {
@@ -73,3 +67,14 @@
     }
   }
   
+  .spinner {
+    margin: 20px 0;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .bigger {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 0 auto;
+  }

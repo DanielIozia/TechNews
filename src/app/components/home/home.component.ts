@@ -14,12 +14,15 @@ export class HomeComponent implements OnInit {
   displayedNews: Item[] = [];
   pageSize: number = 10;
   currentIndex: number = 0;
-  loading: boolean = false;
+  showMoreLoading: boolean = false;
+  loading:boolean = false;
 
   constructor(private news: NewsService) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.news.getNewsID().subscribe((data: number[]) => {
+      this.loading = false;
       this.newsID = data;
       this.loadNews();
     });
@@ -30,11 +33,11 @@ export class HomeComponent implements OnInit {
     // Carica solo le notizie che devono essere visualizzate
     const endIndex = Math.min(this.currentIndex + this.pageSize, this.newsID.length);
     const newIds = this.newsID.slice(this.currentIndex, endIndex);
-    this.loading = true; 
+    this.showMoreLoading = true; 
   
     newIds.forEach(id => {
       this.news.getNewsDetail(id).subscribe((data: Item) => {
-        this.loading = false;
+        this.showMoreLoading = false;
         // Aggiungi la notizia solo se il titolo non è nullo o vuoto
         if (data.title && data.title.trim().length > 0 && 
             !this.displayedNews.some(newsItem => newsItem.id === data.id)) {
