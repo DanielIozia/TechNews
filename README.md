@@ -2,6 +2,8 @@
 
 Questo è un progetto Angular che visualizza notizie ottenute dall'API di Hacker News. La componente principale è `HomeComponent`, che mostra un elenco di articoli con la possibilità di visualizzarne di più o di meno.
 
+### Link Online 
+ https://technews-97be4.web.app/home
 ## Indice
 
 - [Installazione](#installazione)
