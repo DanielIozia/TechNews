@@ -11,9 +11,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
-
-
+import { FirebaseService } from './services/firebase.service';
 
 
 @NgModule({
@@ -34,6 +32,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HttpClient,
     NewsService,
     provideAnimationsAsync(),
+    FirebaseService
     
   ],
   bootstrap: [AppComponent]

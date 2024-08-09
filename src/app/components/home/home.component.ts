@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  
 
   showMore(): void {
     if (this.currentIndex + this.pageSize < this.newsID.length) {
